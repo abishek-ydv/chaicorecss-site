@@ -1,0 +1,18 @@
+{
+  "name": "chaicorecss-site",
+  "version": "1.0.0",
+  "description": "ChaiCoreCSS demo and documentation site",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 3000",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "dependencies": {
+    "chaicorecss": "^1.0.0"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}

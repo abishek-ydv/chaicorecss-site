@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="ChaiCoreCSS — A modern, lightweight utility-first CSS runtime. Write chai-* classes, scan the DOM, get instant inline styles. Zero build step required." />
+    <meta name="keywords" content="ChaiCoreCSS, CSS framework, utility-first, JavaScript, inline styles, DOM" />
+    <link rel="icon" type="image/webp" href="/orb-logo-roundedsquare-bg.webp" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <title>ChaiCoreCSS — Build. Style. Elevate.</title>
+  </head>
+  <body>
+
+    <!-- ===== NAV ===== -->
+    <nav class="nav" id="navbar">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">
+          <img src="/orb-transparent-bg.webp" alt="ChaiCoreCSS Logo" />
+          <span>CHAICORE CSS</span>
+        </a>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#install">Quick Start</a>
+          <a href="#utilities">Utilities</a>
+          <a href="#playground">Playground</a>
+          <a href="#api">API Reference</a>
+          <a href="#theming">Theming</a>
+        </div>
+        <div class="nav-right">
+          <button class="npm-btn" data-copy="npm install chaicorecss" title="Copy to clipboard">
+            <span>$ npm i chaicorecss</span>
+            <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            <span class="copied-toast">Copied!</span>
+          </button>
+          <button class="theme-toggle" id="theme-btn" title="Toggle theme">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </button>
+          <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg"><img src="/hero-background.webp" alt="" /></div>
+      <div class="hero-glow"></div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge"><span class="pulse"></span> v1.0 — Now Available on npm</div>
+          <h1>
+            Build. Style.<br/>
+            <span class="line3">Elevate.</span>
+          </h1>
+          <p class="hero-desc">A modern, lightweight utility-first CSS runtime. Write <strong>chai-*</strong> classes in your markup and let JavaScript convert them to inline styles — zero build step, zero config.</p>
+          <div class="hero-actions">
+            <a href="#install" class="btn-primary"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Get Started</a>
+            <a href="#api" class="btn-secondary"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg> Documentation</a>
+          </div>
+          <button class="hero-install" data-copy="npm install chaicorecss">
+            <span>$</span> <code>npm install chaicorecss</code>
+            <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            <span class="copied-toast">Copied!</span>
+          </button>
+          <div class="hero-badges">
+            <span class="badge"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Modern CSS</span>
+            <span class="badge"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> Responsive</span>
+            <span class="badge"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Accessible</span>
+            <span class="badge"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg> ~6KB gzip</span>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-3d-wrap">
+            <img class="hero-3d" src="/3d-component.webp" alt="ChaiCoreCSS 3D Logo" />
+          </div>
+          <div class="hero-code">
+            <span class="cm">// ChaiCoreCSS — zero config</span><br/>
+            <span class="kw">import</span> <span class="str">"chaicorecss/auto"</span>;<br/>
+            <br/>
+            <span class="cm">// Use in your HTML</span><br/>
+            &lt;div <span class="kw">class</span>=<span class="str">"chai-flex<br/>
+            &nbsp;&nbsp;chai-gap-16 chai-p-24"</span>&gt;<br/>
+            &nbsp;&nbsp;&lt;button <span class="kw">class</span>=<span class="str">"<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;chai-bg-orange<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;chai-rounded-xl"</span>&gt;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp;Get Started<br/>
+            &nbsp;&nbsp;&lt;/button&gt;<br/>
+            &lt;/div&gt;
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+    <section class="features section" id="features">
+      <div class="container">
+        <div class="fade-up">
+          <span class="section-label"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Features</span>
+          <h2 class="section-title">Why <span class="gradient-text">ChaiCoreCSS</span>?</h2>
+          <p class="section-desc">Everything you need to style modern web apps — without the overhead of traditional CSS frameworks.</p>
+        </div>
+        <div class="features-grid fade-up">
+          <div class="feature-card">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <h3>Zero Build Step</h3>
+            <p>No Webpack, no PostCSS, no CLI. Just import and go. ChaiCoreCSS runs entirely in the browser at runtime.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg></div>
+            <h3>Lightweight (~6KB)</h3>
+            <p>Tiny footprint, massive power. The entire runtime is under 6KB gzipped with zero dependencies.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+            <h3>Utility-First</h3>
+            <p>Write expressive chai-* classes directly in HTML. Spacing, colors, typography, layout — all covered.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></div>
+            <h3>MutationObserver</h3>
+            <p>Automatically detects and styles dynamically added DOM elements. Perfect for SPAs and reactive frameworks.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+            <h3>Themeable</h3>
+            <p>Extend the default theme with custom colors, radii, fonts, and more. Full design-system control.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+            <h3>Modular API</h3>
+            <p>Use auto-mode for zero-config, or manually control scanning with startChaiCoreCSS, brew, and parse.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INSTALL ===== -->
+    <section class="section section-accent" id="install">
+      <div class="container">
+        <div class="fade-up">
+          <span class="section-label"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Installation</span>
+          <h2 class="section-title">Up and running in <span class="gradient-text">seconds</span></h2>
+          <p class="section-desc">Three steps to start using ChaiCoreCSS in any project.</p>
+        </div>
+        <div class="install-cards fade-up">
+          <div class="install-card">
+            <div class="install-card-header">
+              <span class="step-badge">01</span>
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              </div>
+            </div>
+            <h4>Install the package</h4>
+            <p>Add ChaiCoreCSS to your project via npm &mdash; zero dependencies, tiny footprint.</p>
+            <div class="install-card-code">
+              <code><span class="kw">$</span> npm install chaicorecss</code>
+            </div>
+          </div>
+          <div class="install-card">
+            <div class="install-card-header">
+              <span class="step-badge">02</span>
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              </div>
+            </div>
+            <h4>Import &amp; auto-start</h4>
+            <p>One line import. ChaiCoreCSS scans your DOM and applies styles on page load.</p>
+            <div class="install-card-code">
+              <code><span class="kw">import</span> <span class="str">"chaicorecss/auto"</span>;</code>
+            </div>
+          </div>
+          <div class="install-card">
+            <div class="install-card-header">
+              <span class="step-badge">03</span>
+              <div class="step-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              </div>
+            </div>
+            <h4>Write chai-* classes</h4>
+            <p>Use intuitive utility classes in your HTML markup. That's literally it!</p>
+            <div class="install-card-code">
+              <code>&lt;div <span class="kw">class</span>=<span class="str">"chai-flex chai-p-24"</span>&gt;</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== UTILITIES SHOWCASE ===== -->
+    <section class="utilities section" id="utilities">
+      <div class="container">
+        <div class="fade-up">
+          <span class="section-label"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Utilities</span>
+          <h2 class="section-title">Explore the <span class="gradient-text">utility system</span></h2>
+          <p class="section-desc">Comprehensive utility groups covering every styling need. Numeric values become pixels automatically.</p>
+        </div>
+        <div class="fade-up">
+          <div class="utils-tabs">
+            <button class="utils-tab active" data-panel="panel-spacing">Spacing</button>
+            <button class="utils-tab" data-panel="panel-colors">Colors</button>
+            <button class="utils-tab" data-panel="panel-typo">Typography</button>
+            <button class="utils-tab" data-panel="panel-layout">Layout</button>
+            <button class="utils-tab" data-panel="panel-borders">Borders</button>
+            <button class="utils-tab" data-panel="panel-effects">Effects</button>
+          </div>
+          <div class="utils-demo">
+            <!-- Spacing -->
+            <div class="utils-panel active" id="panel-spacing">
+              <div class="utils-example">
+                <div class="utils-example-label"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg> Padding & Margin</div>
+                <code>chai-p-24    → padding: 24px
+chai-px-16   → padding-left/right: 16px
+chai-mt-12   → margin-top: 12px
+chai-gap-10  → gap: 10px
+chai-mx-auto → margin-left/right: auto</code>
+              </div>
+            </div>
+            <!-- Colors -->
+            <div class="utils-panel" id="panel-colors">
+              <div class="utils-example">
+                <div class="utils-example-label"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg> Background & Text Colors</div>
+                <code>chai-bg-orange     → background: #f97316
+chai-bg-blue-dark  → background: #1e3a8a
+chai-text-white    → color: #ffffff
+chai-text-green    → color: #22c55e
+chai-border-red    → border-color: #ef4444</code>
+              </div>
+            </div>
+            <!-- Typography -->
+            <div class="utils-panel" id="panel-typo">
+              <div class="utils-example">
+                <div class="utils-example-label"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg> Font & Text</div>
+                <code>chai-text-center → text-align: center
+chai-text-18     → font-size: 18px
+chai-font-bold   → font-weight: 700
+chai-font-mono   → font-family: monospace
+chai-leading-relaxed → line-height: 1.625
+chai-uppercase   → text-transform: uppercase</code>
+              </div>
+            </div>
+            <!-- Layout -->
+            <div class="utils-panel" id="panel-layout">
+              <div class="utils-example">
+                <div class="utils-example-label"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg> Flexbox & Grid</div>
+                <code>chai-flex          → display: flex
+chai-flex-col      → flex-direction: column
+chai-grid          → display: grid
+chai-grid-cols-3   → grid-template-columns: repeat(3, 1fr)
+chai-items-center  → align-items: center
+chai-justify-between → justify-content: space-between</code>
+              </div>
+            </div>
+            <!-- Borders -->
+            <div class="utils-panel" id="panel-borders">
+              <div class="utils-example">
+                <div class="utils-example-label"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/></svg> Borders & Radius</div>
+                <code>chai-border      → border: 1px solid
+chai-border-2    → border-width: 2px
+chai-rounded-xl  → border-radius: 12px
+chai-rounded-full → border-radius: 9999px
+chai-border-orange → border-color: #f97316</code>
+              </div>
+            </div>
+            <!-- Effects -->
+            <div class="utils-panel" id="panel-effects">
+              <div class="utils-example">
+                <div class="utils-example-label"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Shadows & Opacity</div>
+                <code>chai-shadow-lg   → box-shadow: 0 20px 44px ...
+chai-shadow-xl   → box-shadow: 0 26px 64px ...
+chai-opacity-80  → opacity: 0.8
+chai-cursor-pointer → cursor: pointer
+chai-transition  → transition-property: all</code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PLAYGROUND ===== -->
+    <section class="section section-accent" id="playground">
+      <div class="container">
+        <div class="fade-up">
+          <span class="section-label"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg> Playground</span>
+          <h2 class="section-title">Try it <span class="gradient-text">live</span></h2>
+          <p class="section-desc">Write HTML with chai-* classes and see them rendered instantly. Hit Run or Ctrl+Enter.</p>
+        </div>
+        <div class="pg-examples fade-up">
+          <button class="pg-example-btn active" data-example="default">Flex Layout</button>
+          <button class="pg-example-btn" data-example="card">Card Component</button>
+          <button class="pg-example-btn" data-example="navbar">Navigation Bar</button>
+          <button class="pg-example-btn" data-example="pricing">Pricing Badge</button>
+          <button class="pg-example-btn" data-example="alert">Alert Banner</button>
+        </div>
+        <div class="playground-wrap fade-up">
+          <div class="pg-editor">
+            <div class="pg-editor-header">
+              <span><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Editor</span>
+              <div class="pg-btn-group">
+                <button class="pg-reset-btn" id="pg-reset" title="Reset to default"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg> Reset</button>
+                <button class="pg-run-btn" id="pg-run"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg> Run</button>
+              </div>
+            </div>
+            <textarea class="pg-textarea" id="pg-input" spellcheck="false"></textarea>
+          </div>
+          <div class="pg-preview">
+            <div class="pg-preview-header"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> Preview</div>
+            <div class="pg-preview-area">
+              <div class="pg-output" id="pg-output"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== API ===== -->
+    <section class="api section" id="api">
+      <div class="container">
+        <div class="fade-up">
+          <span class="section-label"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> API Reference</span>
+          <h2 class="section-title">Complete <span class="gradient-text">API</span></h2>
+          <p class="section-desc">Everything exposed by the chaicorecss package — clean, composable, and well-documented.</p>
+        </div>
+        <div class="api-grid fade-up">
+          <div class="api-card">
+            <h3>parseChaiClass(className, options?)</h3>
+            <p>Parse a single chai-* class and return support status, category, generated styles, and an ignore reason when unsupported.</p>
+            <code>import { parseChaiClass } from "chaicorecss";
+const result = parseChaiClass("chai-p-24");
+// { supported: true, category: "spacing", styles: { padding: "24px" } }</code>
+          </div>
+          <div class="api-card">
+            <h3>applyChaiStyles(root?, options?)</h3>
+            <p>Scans once, applies inline styles, removes supported chai-* classes, stores originals in data-chai-classes.</p>
+            <code>import { applyChaiStyles } from "chaicorecss";
+const report = applyChaiStyles(document);
+console.log(report.applied.length, "classes applied");</code>
+          </div>
+          <div class="api-card">
+            <h3>startChaiCoreCSS(root?, options?)</h3>
+            <p>Runs the first scan and starts a MutationObserver for dynamic DOM updates. Returns a controller.</p>
+            <code>import { startChaiCoreCSS } from "chaicorecss";
+const ctrl = startChaiCoreCSS(document);
+ctrl.refresh(); // Re-scan
+ctrl.disconnect(); // Stop</code>
+          </div>
+          <div class="api-card">
+            <h3>brew(root?, options?)</h3>
+            <p>Friendly alias for applyChaiStyles. Perfect for re-scanning after dynamic content updates.</p>
+            <code>import { brew } from "chaicorecss";
+brew(document.querySelector("#app"));</code>
+          </div>
+          <div class="api-card">
+            <h3>createChaiCoreCSS(options?)</h3>
+            <p>Creates a tiny configured instance with parse, apply, and start helpers bound to your custom options.</p>
+            <code>import { createChaiCoreCSS } from "chaicorecss";
+const chai = createChaiCoreCSS({ theme: { colors: { brand: "#0f766e" } } });
+chai.start(document);</code>
+          </div>
+          <div class="api-card">
+            <h3>import "chaicorecss/auto"</h3>
+            <p>Zero-config auto mode. Just import and ChaiCoreCSS automatically scans and observes your entire document.</p>
+            <code>// That's it — one line!
+import "chaicorecss/auto";</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== THEMING ===== -->
+    <section class="theme-section section section-accent" id="theming">
+      <div class="container">
+        <div class="fade-up">
+          <span class="section-label"><svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg> Theming</span>
+          <h2 class="section-title">Extend the <span class="gradient-text">design system</span></h2>
+          <p class="section-desc">Add custom colors, radii, fonts, and more. Use them instantly as chai-* classes.</p>
+        </div>
+        <div class="theme-demo fade-up">
+          <div class="theme-code">
+            <pre><span style="color:var(--orange-400)">import</span> { startChaiCoreCSS } <span style="color:var(--orange-400)">from</span> <span style="color:#22c55e">"chaicorecss"</span>;
+
+startChaiCoreCSS(document, {
+  theme: {
+    colors: {
+      brand: <span style="color:#22c55e">"#0f766e"</span>,
+      accent: <span style="color:#22c55e">"#7c3aed"</span>,
+      surface: <span style="color:#22c55e">"#1e1b4b"</span>,
+    },
+    radii: {
+      pill: <span style="color:#22c55e">"9999px"</span>,
+    },
+  },
+});
+
+<span style="color:var(--text-muted)">// Now use in HTML:</span>
+<span style="color:var(--text-muted)">// chai-bg-brand, chai-text-accent,</span>
+<span style="color:var(--text-muted)">// chai-rounded-pill</span></pre>
+          </div>
+          <div class="theme-visual">
+            <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:600;margin-bottom:16px">Default Color Palette</h3>
+            <div class="color-row"><div class="color-swatch" style="background:#f97316"></div><span class="color-label">orange — #f97316</span></div>
+            <div class="color-row"><div class="color-swatch" style="background:#3b82f6"></div><span class="color-label">blue — #3b82f6</span></div>
+            <div class="color-row"><div class="color-swatch" style="background:#22c55e"></div><span class="color-label">green — #22c55e</span></div>
+            <div class="color-row"><div class="color-swatch" style="background:#a855f7"></div><span class="color-label">purple — #a855f7</span></div>
+            <div class="color-row"><div class="color-swatch" style="background:#ef4444"></div><span class="color-label">red — #ef4444</span></div>
+            <div class="color-row"><div class="color-swatch" style="background:#ec4899"></div><span class="color-label">pink — #ec4899</span></div>
+            <div class="color-row"><div class="color-swatch" style="background:#111827"></div><span class="color-label">black — #111827</span></div>
+            <div class="color-row"><div class="color-swatch" style="background:#ffffff;border-color:#ccc"></div><span class="color-label">white — #ffffff</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <img src="/orb-transparent-bg.webp" alt="ChaiCoreCSS Logo" />
+              <span>ChaiCoreCSS</span>
+            </div>
+            <p class="footer-desc">A modern, lightweight utility-first CSS runtime. Write chai-* classes in your markup — zero build step required.</p>
+            <div class="footer-socials">
+              <a href="https://github.com/abishek-ydv" target="_blank" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+              <a href="https://www.npmjs.com/package/chaicorecss" target="_blank" aria-label="npm">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+              </a>
+              <a href="https://twitter.com/abishekydv" target="_blank" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#install">Installation</a>
+            <a href="#utilities">Utilities</a>
+            <a href="#playground">Playground</a>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <a href="#api">API Reference</a>
+            <a href="#theming">Theming</a>
+            <a href="https://www.npmjs.com/package/chaicorecss" target="_blank">npm Package</a>
+            <a href="https://github.com/abishek-ydv/chaicore-css" target="_blank">GitHub</a>
+          </div>
+          <div class="footer-col">
+            <h4>Community</h4>
+            <a href="https://github.com/abishek-ydv/chaicore-css" target="_blank">Contribute</a>
+            <a href="https://github.com/abishek-ydv/chaicore-css" target="_blank">Report Issues</a>
+            <a href="https://twitter.com/abishekydv" target="_blank">Twitter</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>&copy; 2026 ChaiCoreCSS — MIT License</span>
+          <span class="footer-love">Made with <svg class="pixel-heart" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="1" width="2" height="2"/><rect x="5" y="1" width="2" height="2"/><rect x="9" y="1" width="2" height="2"/><rect x="11" y="1" width="2" height="2"/><rect x="1" y="3" width="2" height="2"/><rect x="3" y="3" width="2" height="2"/><rect x="5" y="3" width="2" height="2"/><rect x="7" y="3" width="2" height="2"/><rect x="9" y="3" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/><rect x="13" y="3" width="2" height="2"/><rect x="1" y="5" width="2" height="2"/><rect x="3" y="5" width="2" height="2"/><rect x="5" y="5" width="2" height="2"/><rect x="7" y="5" width="2" height="2"/><rect x="9" y="5" width="2" height="2"/><rect x="11" y="5" width="2" height="2"/><rect x="13" y="5" width="2" height="2"/><rect x="3" y="7" width="2" height="2"/><rect x="5" y="7" width="2" height="2"/><rect x="7" y="7" width="2" height="2"/><rect x="9" y="7" width="2" height="2"/><rect x="11" y="7" width="2" height="2"/><rect x="5" y="9" width="2" height="2"/><rect x="7" y="9" width="2" height="2"/><rect x="9" y="9" width="2" height="2"/><rect x="7" y="11" width="2" height="2"/></svg> by ABISHEK</span>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
