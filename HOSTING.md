@@ -2,6 +2,9 @@
 
 This folder is ready to be the root of the landing site repository.
 
+Repo: https://github.com/abishek-ydv/chaicorecss-site
+Live URL: https://chaicore.abishekyadav.in
+
 ## Deploy Settings
 
 Use these settings on Vercel, Netlify, or another static host:

@@ -2,8 +2,16 @@
   "name": "chaicorecss-site",
   "version": "1.0.0",
   "description": "ChaiCoreCSS demo and documentation site",
+  "homepage": "https://chaicore.abishekyadav.in",
   "type": "module",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abishek-ydv/chaicorecss-site.git"
+  },
+  "bugs": {
+    "url": "https://github.com/abishek-ydv/chaicorecss-site/issues"
+  },
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 3000",
     "build": "vite build",

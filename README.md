@@ -4,6 +4,9 @@ This directory contains the Vite landing website and playground for ChaiCoreCSS.
 
 It is ready to live in its own repository. The site depends on the public `chaicorecss` npm package and imports from `chaicorecss`, not from a local sibling folder.
 
+Live URL: https://chaicore.abishekyadav.in
+Site repo: https://github.com/abishek-ydv/chaicorecss-site
+
 ## Structure
 
 - `index.html` - main site entry point.
