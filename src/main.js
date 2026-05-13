@@ -190,15 +190,27 @@ if (heroVisual) {
 const mobileBtn = document.getElementById('mobile-toggle');
 const navLinksWrap = document.querySelector('.nav-links');
 if (mobileBtn && navLinksWrap) {
+  mobileBtn.setAttribute('aria-expanded', 'false');
+
+  function closeMobileNav() {
+    navLinksWrap.classList.remove('is-open');
+    mobileBtn.setAttribute('aria-expanded', 'false');
+  }
+
   mobileBtn.addEventListener('click', () => {
-    navLinksWrap.style.display = navLinksWrap.style.display === 'flex' ? 'none' : 'flex';
-    navLinksWrap.style.position = 'absolute';
-    navLinksWrap.style.top = 'var(--nav-height)';
-    navLinksWrap.style.left = '0';
-    navLinksWrap.style.right = '0';
-    navLinksWrap.style.flexDirection = 'column';
-    navLinksWrap.style.background = 'var(--bg-secondary)';
-    navLinksWrap.style.padding = '16px';
-    navLinksWrap.style.borderBottom = '1px solid var(--border-color)';
+    const isOpen = navLinksWrap.classList.toggle('is-open');
+    mobileBtn.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  navLinksWrap.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMobileNav);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMobileNav();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeMobileNav();
   });
 }

@@ -21,7 +21,7 @@
         <img src="/orb-transparent-bg.webp" alt="ChaiCoreCSS Logo" />
         <span>CHAICORE CSS</span>
       </a>
-      <div class="nav-links">
+      <div class="nav-links" id="primary-nav">
         <a href="#features">Features</a>
         <a href="#install">Quick Start</a>
         <a href="#utilities">Utilities</a>
@@ -56,10 +56,12 @@
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
           </svg>
         </button>
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 12h18M3 6h18M3 18h18" />
-          </svg>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu" aria-controls="primary-nav">
+          <span class="hamburger-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
         </button>
       </div>
     </div>
@@ -249,7 +251,7 @@
             </div>
           </div>
           <h4>Install the package</h4>
-          <p>Add ChaiCoreCSS to your project via npm &mdash; zero dependencies, tiny footprint.</p>
+          <p>Add ChaiCoreCSS to your project via npm with zero dependencies and a tiny footprint.</p>
           <div class="install-card-code">
             <code><span class="kw">$</span> npm install chaicorecss</code>
           </div>
@@ -571,7 +573,7 @@ startChaiCoreCSS(document, {
 <span style="color:var(--text-muted)">// chai-rounded-pill</span></pre>
         </div>
         <div class="theme-visual">
-          <h3 style="font-family:var(--font-heading);font-size:20px;font-weight:600;margin-bottom:16px">Default Color
+          <h3 class="theme-palette-title">Default Color
             Palette</h3>
           <div class="color-row">
             <div class="color-swatch" style="background:#f97316"></div><span class="color-label">orange - #f97316</span>
@@ -661,7 +663,7 @@ startChaiCoreCSS(document, {
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 ChaiCoreCSS - MIT License</span>
+        <span>&copy; 2026 ChaiCoreCSS</span>
         <span class="footer-love">Made with <svg class="pixel-heart" viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg">
             <rect x="3" y="1" width="2" height="2" />
