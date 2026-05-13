@@ -333,7 +333,7 @@ ol {
   cursor: pointer
 }
 
-/* Theme toggle — round button */
+/* Theme toggle - round button */
 .theme-toggle {
   width: 32px;
   height: 32px;
@@ -621,7 +621,7 @@ ol {
   opacity: 1
 }
 
-/* Hero visual — 3d component + overlapping glassmorphism code */
+/* Hero visual - 3d component + overlapping glassmorphism code */
 .hero-visual {
   position: relative;
   display: flex;

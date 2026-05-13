@@ -1,11 +1,15 @@
 # ChaiCoreCSS Site
 
-This directory contains the Vite landing website and playground for ChaiCoreCSS.
+Vite-powered landing website and playground for ChaiCoreCSS.
 
-It is ready to live in its own repository. The site depends on the public `chaicorecss` npm package and imports from `chaicorecss`, not from a local sibling folder.
+## Live Site
 
-Live URL: https://chaicore.abishekyadav.in
-Site repo: https://github.com/abishek-ydv/chaicorecss-site
+- Production: https://chaicore.abishekyadav.in
+- Repository: https://github.com/abishek-ydv/chaicorecss-site
+
+## Overview
+
+This site is deployed and uses the public `chaicorecss` npm package. It imports from `chaicorecss` directly, not from a local sibling folder, so the deployed build reflects the published package dependency.
 
 ## Structure
 
@@ -22,13 +26,13 @@ npm install
 npm run dev
 ```
 
-## Build
+## Build And Preview
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Before the Package Is Published
+## Deployment
 
-For local pre-publish testing, either install a package tarball created with `npm pack` from the package repo, or use `npm link`. After publishing, keep the dependency as the normal npm version in `package.json`.
+Build output is generated in `dist/`. Deploy the contents of `dist/` to update the production site.

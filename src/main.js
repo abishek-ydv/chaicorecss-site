@@ -89,7 +89,7 @@ const pgExamples = {
     Free
   </div>
   <div class="chai-bg-orange chai-text-white chai-px-16 chai-py-8 chai-rounded-full chai-text-13 chai-font-bold">
-    Pro — $9/mo
+    Pro - $9/mo
   </div>
   <div class="chai-bg-purple chai-text-white chai-px-16 chai-py-8 chai-rounded-full chai-text-13 chai-font-bold">
     Enterprise
@@ -130,7 +130,7 @@ if (pgInput && pgOutput && pgRun) {
   autoResize();
   runPlayground();
 
-  // Reset button — reloads the currently active example preset
+  // Reset button - reloads the currently active example preset
   if (pgResetBtn) {
     pgResetBtn.addEventListener('click', () => {
       const key = getActiveExampleKey();
@@ -166,7 +166,7 @@ document.querySelectorAll('.utils-tab').forEach(tab => {
   });
 });
 
-// ===== HERO PARALLAX (depth shift — visual area only) =====
+// ===== HERO PARALLAX (depth shift - visual area only) =====
 const hero3d = document.querySelector('.hero-3d');
 const heroCode = document.querySelector('.hero-code');
 const heroVisual = document.querySelector('.hero-visual');
