@@ -2406,12 +2406,11 @@ ol {
   }
 
   .hero-3d-wrap {
-    width: min(300px, 88vw);
-    height: min(300px, 88vw)
+    width: min(400px);
   }
 
   .hero-visual {
-    min-height: min(300px, 88vw)
+    min-height: min(280px, 88vw)
   }
 
   .hero-badges {
