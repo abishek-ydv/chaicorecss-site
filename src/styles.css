@@ -76,7 +76,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--nav-height) + 20px);
   scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
-  scrollbar-width: thin
+  scrollbar-width: thin;
+  -webkit-tap-highlight-color: transparent
 }
 
 body {
@@ -103,6 +104,23 @@ button {
   cursor: pointer;
   font-family: inherit;
   background: none
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation
+}
+
+a:focus,
+button:focus {
+  outline: none
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgba(249, 115, 22, .55);
+  outline-offset: 3px
 }
 
 ul,
@@ -454,6 +472,22 @@ ol {
   background: var(--bg-primary)
 }
 
+.hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 240px;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(10, 10, 15, 0) 0%, var(--bg-primary) 78%)
+}
+
+[data-theme="light"] .hero::after {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--bg-primary) 78%)
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -476,8 +510,12 @@ ol {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 30%, var(--hero-fade-end) 95%);
+  background: linear-gradient(180deg, transparent 22%, rgba(10, 10, 15, .62) 72%, var(--hero-fade-end) 100%);
   transition: background .6s
+}
+
+[data-theme="light"] .hero-bg::after {
+  background: linear-gradient(180deg, transparent 22%, rgba(255, 255, 255, .68) 72%, var(--hero-fade-end) 100%)
 }
 
 .hero-glow {
@@ -509,7 +547,7 @@ ol {
 
 .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
@@ -715,8 +753,8 @@ ol {
 
 .hero-3d-wrap {
   position: relative;
-  width: 420px;
-  height: 420px;
+  width: 380px;
+  height: 380px;
   max-width: 100%;
   display: flex;
   align-items: center;
@@ -733,7 +771,7 @@ ol {
 }
 
 .hero-3d:hover {
-  filter: drop-shadow(0 30px 80px rgba(249, 115, 22, .3))
+  filter: drop-shadow(0 20px 60px rgba(249, 115, 22, .2))
 }
 
 .hero-code {
@@ -1780,8 +1818,8 @@ ol {
   }
 
   .hero-3d-wrap {
-    width: 390px;
-    height: 390px
+    width: 350px;
+    height: 350px
   }
 
   .hero-code {
@@ -1819,7 +1857,7 @@ ol {
 
   .nav-links {
     position: absolute;
-    top: calc(var(--nav-height) - 1px);
+    top: calc(var(--nav-height) + 8px);
     left: var(--page-gutter);
     right: var(--page-gutter);
     display: none;
@@ -1828,7 +1866,7 @@ ol {
     gap: 4px;
     padding: 12px;
     border: 1px solid var(--border-color);
-    border-radius: 0 0 14px 14px;
+    border-radius: 14px;
     background: rgba(10, 10, 15, 0.96);
     box-shadow: 0 18px 50px rgba(0, 0, 0, .28);
     backdrop-filter: blur(18px);
@@ -1902,13 +1940,20 @@ ol {
   }
 
   .hero-visual {
-    min-height: 340px;
+    min-height: 320px;
     margin-top: 0
   }
 
   .hero-3d-wrap {
-    width: 300px;
-    height: 300px
+    width: 280px;
+    height: 280px
+  }
+
+  .hero-3d {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain
   }
 
   .hero-code {
@@ -2016,6 +2061,20 @@ ol {
 }
 
 @media(max-width:700px) {
+  .hero::after {
+    height: 210px;
+    background: linear-gradient(180deg, rgba(10, 10, 15, 0) 0%, rgba(10, 10, 15, .74) 42%, var(--bg-primary) 100%)
+  }
+
+  [data-theme="light"] .hero::after {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .78) 42%, var(--bg-primary) 100%)
+  }
+
+  .features.section {
+    margin-top: -32px;
+    padding-top: 64px
+  }
+
   .npm-btn span:first-child {
     display: none
   }
@@ -2075,10 +2134,10 @@ ol {
 
   .hero-inner {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 10px;
     text-align: center;
     padding-top: 36px;
-    padding-bottom: 44px
+    padding-bottom: 28px
   }
 
   .hero-content {
@@ -2106,13 +2165,15 @@ ol {
   }
 
   .hero-visual {
-    min-height: 350px;
-    width: 100%
+    min-height: 0;
+    height: 272px;
+    width: 100%;
+    margin-top: -2px
   }
 
   .hero-3d-wrap {
-    width: 330px;
-    height: 330px
+    width: 272px;
+    height: 272px
   }
 
   .hero-badges {
@@ -2173,7 +2234,7 @@ ol {
 
   .hero-inner {
     padding-top: 32px;
-    padding-bottom: 42px
+    padding-bottom: 22px
   }
 
   .hero-actions {
@@ -2197,12 +2258,14 @@ ol {
   }
 
   .hero-3d-wrap {
-    width: min(330px, 86vw);
-    height: min(330px, 86vw)
+    width: min(262px, 74vw);
+    height: min(262px, 74vw)
   }
 
   .hero-visual {
-    min-height: min(330px, 86vw)
+    min-height: 0;
+    height: min(262px, 74vw);
+    margin-bottom: -2px
   }
 
   .hero-badges .badge {
@@ -2439,12 +2502,15 @@ ol {
   }
 
   .hero-3d-wrap {
-    width: min(330px, 88vw);
-    height: min(330px, 88vw)
+    width: min(246px, 72vw);
+    height: min(246px, 72vw)
   }
 
   .hero-visual {
-    min-height: min(330px, 88vw)
+    min-height: 0;
+    height: min(246px, 72vw);
+    margin-top: 18px;
+    margin-bottom: 0
   }
 
   .hero-badges {
@@ -2517,5 +2583,93 @@ ol {
 
   .footer-love {
     gap: 4px
+  }
+}
+
+@keyframes mobileHeroFloat {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg)
+  }
+
+  50% {
+    transform: translateY(-5px) rotate(.6deg)
+  }
+}
+
+@media(hover:none),
+(pointer:coarse) {
+  .hero-3d {
+    cursor: default;
+    filter: drop-shadow(0 14px 34px rgba(249, 115, 22, .14));
+    animation: mobileHeroFloat 6s ease-in-out infinite
+  }
+
+  .hero-3d:hover {
+    filter: drop-shadow(0 14px 34px rgba(249, 115, 22, .14))
+  }
+
+  .nav-links a:hover {
+    color: var(--text-secondary);
+    background: transparent
+  }
+
+  .nav-links a.active {
+    color: var(--orange-500);
+    background: rgba(249, 115, 22, 0.08)
+  }
+
+  .npm-btn:hover {
+    border-color: var(--border-color);
+    color: var(--text-secondary)
+  }
+
+  .npm-btn:hover .copy-icon {
+    opacity: .5
+  }
+
+  .mobile-toggle:hover:not([aria-expanded="true"]),
+  .theme-toggle:hover {
+    border-color: var(--border-color);
+    background: var(--bg-card);
+    box-shadow: none;
+    transform: none
+  }
+
+  .btn-primary:hover {
+    transform: none;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3)
+  }
+
+  .pg-run-btn:hover {
+    transform: none;
+    box-shadow: none
+  }
+
+  .btn-secondary:hover,
+  .hero-install:hover,
+  .pg-reset-btn:hover {
+    border-color: var(--border-color);
+    background: var(--bg-card)
+  }
+
+  .feature-card:hover,
+  .install-card:hover,
+  .api-card:hover {
+    border-color: var(--border-color);
+    transform: none;
+    box-shadow: none
+  }
+
+  .install-card:hover::before {
+    opacity: 0
+  }
+}
+
+@media(hover:none) and (prefers-reduced-motion:reduce),
+(pointer:coarse) and (prefers-reduced-motion:reduce) {
+  .hero-3d {
+    animation: none
   }
 }

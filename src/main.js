@@ -170,7 +170,8 @@ document.querySelectorAll('.utils-tab').forEach(tab => {
 const hero3d = document.querySelector('.hero-3d');
 const heroCode = document.querySelector('.hero-code');
 const heroVisual = document.querySelector('.hero-visual');
-if (heroVisual) {
+const canUseHeroParallax = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+if (heroVisual && canUseHeroParallax) {
   heroVisual.addEventListener('mousemove', e => {
     const rect = heroVisual.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
